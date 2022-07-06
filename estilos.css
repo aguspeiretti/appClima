@@ -62,8 +62,18 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-@media screen and (max-width: 450px) {
+#temperaturas {
+  margin-top: 30px;
+}
+.container2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (max-width: 550px) {
   #container {
     width: 80%;
     height: 80%;
@@ -79,33 +89,34 @@ body {
   #temperatura-descripcion {
     font-size: 20px;
   }
-}
-#caja1 {
-  width: 100%;
-  margin-top: -30px;
-}
-#temperaturas h1 {
-  font-size: 20px;
-}
-#temperaturas {
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.container2 {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-#caja4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-#caja4 h1 {
-  font-size: 30px;
+  #caja1 {
+    width: 100%;
+    margin-top: -30px;
+  }
+  #temperaturas h1 {
+    font-size: 20px;
+  }
+  #temperaturas {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  #caja4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  #caja4 h1 {
+    font-size: 30px;
+  }
 }
