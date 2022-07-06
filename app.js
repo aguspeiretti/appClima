@@ -8,6 +8,13 @@ window.addEventListener("load", () => {
   let ubicacion = document.getElementById("ubicacion");
   let iconoAnimado = document.getElementById("icono-animado");
   let velocidad = document.getElementById("viento-velocidad");
+  let humedad = document.getElementById("humedad");
+  let date = document.getElementById("fecha");
+  let sunrise = document.getElementById("sunrise");
+  let sunset = document.getElementById("sunset");
+  let tempmax = document.getElementById("max");
+  let tempmin = document.getElementById("min");
+
   let apiKey = "110d5e7cb2d7cad2ca03169b9a594680";
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -22,10 +29,20 @@ window.addEventListener("load", () => {
           return response.json();
         })
         .then((data) => {
+          humedad.textContent = `${data.main.humidity}%`;
+          sunrise.textContent = new Date(
+            data.sys.sunrise * 1000
+          ).toLocaleTimeString();
+          sunset.textContent = new Date(
+            data.sys.sunset * 1000
+          ).toLocaleTimeString();
+          tempmax.textContent = `${data.main.temp_max}`;
+          tempmin.textContent = `${data.main.temp_min}`;
           temperaturaValor.textContent = `${data.main.temp}º C`;
           temperaturaDescripcion.textContent = data.weather[0].description;
           ubicacion.textContent = data.name;
           velocidad.textContent = `${data.wind.speed} m/s`;
+
           console.log(data);
 
           switch (data.weather[0].main) {
